@@ -1,0 +1,10 @@
+.openapi-generator-ignore
+apis/SprayApi.ts
+apis/index.ts
+index.ts
+models/CanSprayDto.ts
+models/CanSprayTimeDto.ts
+models/CityDto.ts
+models/InfoDto.ts
+models/index.ts
+runtime.ts

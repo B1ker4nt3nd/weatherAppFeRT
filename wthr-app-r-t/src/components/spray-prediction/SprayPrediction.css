@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  margin: 10px;
+}
+.first-row {
+  margin-top: 10vh;
+}
+.city-progress-bar {
+  width: 40vw;
+}
+
+.fill {
+  max-height: 20vh;
+}
+.fill img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.header-row div {
+  padding: 0px;
+}
+
+.page-description {
+  background-color: white !important;
+}
+.flex-container .form-group {
+  margin: 0px;
+}

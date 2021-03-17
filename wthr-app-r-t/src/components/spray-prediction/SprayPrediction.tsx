@@ -18,13 +18,16 @@ function SprayPrediction() {
   // componentDidMount(
   //   var test = new apis.SprayApi();
   // );
-  let cities: CityDto[] = [];
+
+  const [cities, setCities] = useState([] as CityDto[]);
+
+  // let cities: CityDto[] = [];
 
   useEffect(() => {
     // if (!cities) {
     const test = new apis.SprayApi();
-    var result = test.apiSprayGetcitiesGet();
-    console.log(JSON.stringify(result));
+    test.apiSprayGetcitiesGet().then((cities: CityDto[]) => setCities(cities));
+    // console.log(JSON.stringify(result));
     // }
     console.log('mount it!');
   }, []); // passing an empty array as second argument triggers the callback in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
@@ -47,10 +50,13 @@ function SprayPrediction() {
           <Form.Group controlId="exampleForm.SelectCustom">
             {/* <Form.Label>Custom select</Form.Label> */}
             <Form.Control as="select" custom>
-              <option>Budapest</option>
+              {cities.map((city: CityDto) => {
+                return <option key={city.id}>{city.name}</option>;
+              })}
+              {/* <option>Budapest</option>
               <option>Gárdony</option>
               <option>Érd</option>
-              <option>Martonvásár</option>
+              <option>Martonvásár</option> */}
             </Form.Control>
           </Form.Group>
         </Form>
@@ -60,6 +66,3 @@ function SprayPrediction() {
 }
 
 export default SprayPrediction;
-function componentDidMount() {
-  throw new Error('Function not implemented.');
-}

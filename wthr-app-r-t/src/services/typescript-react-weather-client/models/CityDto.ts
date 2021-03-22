@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+    CanSprayTimeDto,
+    CanSprayTimeDtoFromJSON,
+    CanSprayTimeDtoFromJSONTyped,
+    CanSprayTimeDtoToJSON,
+} from './';
+
 /**
  * 
  * @export
@@ -43,6 +50,12 @@ export interface CityDto {
      * @memberof CityDto
      */
     country?: string | null;
+    /**
+     * 
+     * @type {Array<CanSprayTimeDto>}
+     * @memberof CityDto
+     */
+    canSprayTimes?: Array<CanSprayTimeDto> | null;
 }
 
 export function CityDtoFromJSON(json: any): CityDto {
@@ -59,6 +72,7 @@ export function CityDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): C
         'externalId': !exists(json, 'externalId') ? undefined : json['externalId'],
         'name': !exists(json, 'name') ? undefined : json['name'],
         'country': !exists(json, 'country') ? undefined : json['country'],
+        'canSprayTimes': !exists(json, 'canSprayTimes') ? undefined : (json['canSprayTimes'] === null ? null : (json['canSprayTimes'] as Array<any>).map(CanSprayTimeDtoFromJSON)),
     };
 }
 
@@ -75,6 +89,7 @@ export function CityDtoToJSON(value?: CityDto | null): any {
         'externalId': value.externalId,
         'name': value.name,
         'country': value.country,
+        'canSprayTimes': value.canSprayTimes === undefined ? undefined : (value.canSprayTimes === null ? null : (value.canSprayTimes as Array<any>).map(CanSprayTimeDtoToJSON)),
     };
 }
 

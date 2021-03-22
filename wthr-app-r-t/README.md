@@ -1,3 +1,8 @@
+# this react app
+
+This was installed for json server:
+npm install -D cross-env npm-run-all json-server
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

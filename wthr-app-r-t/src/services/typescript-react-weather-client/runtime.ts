@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
-export const BASE_PATH = 'http://localhost:21853'.replace(/\/+$/, '');
+export const BASE_PATH = process.env.REACT_APP_API_URL
+  ? process.env.REACT_APP_API_URL.replace(/\/+$/, '')
+  : 'http://localhost:21853'.replace(/\/+$/, '');
 
 const isBlob = (value: any) =>
   typeof Blob !== 'undefined' && value instanceof Blob;

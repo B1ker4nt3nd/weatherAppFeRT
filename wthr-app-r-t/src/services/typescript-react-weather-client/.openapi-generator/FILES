@@ -1,4 +1,5 @@
 .openapi-generator-ignore
+apis/CitiesApi.ts
 apis/SprayApi.ts
 apis/index.ts
 index.ts

@@ -78,6 +78,12 @@ export interface CanSprayTimeDto {
      * @type {number}
      * @memberof CanSprayTimeDto
      */
+    weatherIconId?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CanSprayTimeDto
+     */
     cloudsPercentage?: number;
     /**
      * 
@@ -118,6 +124,7 @@ export function CanSprayTimeDtoFromJSONTyped(json: any, ignoreDiscriminator: boo
         'weatherMain': !exists(json, 'weatherMain') ? undefined : json['weatherMain'],
         'weatherDescription': !exists(json, 'weatherDescription') ? undefined : json['weatherDescription'],
         'weatherIcon': !exists(json, 'weatherIcon') ? undefined : json['weatherIcon'],
+        'weatherIconId': !exists(json, 'weatherIconId') ? undefined : json['weatherIconId'],
         'cloudsPercentage': !exists(json, 'cloudsPercentage') ? undefined : json['cloudsPercentage'],
         'windSpeed': !exists(json, 'windSpeed') ? undefined : json['windSpeed'],
         'windDirection': !exists(json, 'windDirection') ? undefined : json['windDirection'],
@@ -143,6 +150,7 @@ export function CanSprayTimeDtoToJSON(value?: CanSprayTimeDto | null): any {
         'weatherMain': value.weatherMain,
         'weatherDescription': value.weatherDescription,
         'weatherIcon': value.weatherIcon,
+        'weatherIconId': value.weatherIconId,
         'cloudsPercentage': value.cloudsPercentage,
         'windSpeed': value.windSpeed,
         'windDirection': value.windDirection,

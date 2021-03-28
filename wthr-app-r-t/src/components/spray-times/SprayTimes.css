@@ -11,3 +11,30 @@
   height: 100px;
   min-height: 100px;
 }
+
+.row-item {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.flex-container.no-pointer-cursor {
+  cursor: default;
+}
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.list-group-container .list-group {
+  width: 40%;
+}
+
+.list-group-container .list-group .list-group-item {
+  background-color: #a6fcef;
+}
+
+@media screen and (max-width: 1000px) {
+  .list-group-container .list-group {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 -150px 0 -150px;
+  }
+}

@@ -1,0 +1,21 @@
+.fade {
+  animation: fade-in-keyframes 1s;
+}
+@keyframes fade-in-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wthr-icon {
+  font-size: xx-large;
+  cursor: pointer;
+}

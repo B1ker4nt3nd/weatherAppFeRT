@@ -25,11 +25,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 'build:forlocal'
+### `build:forlocal`
 
 Build app for test with your local backend api server
 
-### 'serve -s build'
+### `serve -s build`
 
 First need install 'npm install -g serve'
 Run your app in [http://localhost:5000] to test your build folder. Also test your folder in your local network.

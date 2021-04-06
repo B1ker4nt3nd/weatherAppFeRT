@@ -31,7 +31,7 @@ const cities = [
         weatherMain: 'Clouds',
         weatherDescription: 'erős felhőzet',
         weatherIcon: '04d',
-        weatherIconId: 803,
+        weatherIconId: 200,
         cloudsPercentage: 77,
         windSpeed: 4.32,
         windDirection: 315,

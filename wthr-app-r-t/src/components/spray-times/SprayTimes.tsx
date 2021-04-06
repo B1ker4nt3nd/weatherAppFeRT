@@ -1,21 +1,10 @@
 import './SprayTimes.css';
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  MouseEventHandler,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
-import {
-  CanSprayDto,
-  CanSprayTimeDto,
-  CityDto,
-} from '../../services/typescript-react-weather-client/index';
+import { CanSprayTimeDto } from '../../services/typescript-react-weather-client/index';
 import { ListGroup, Spinner } from 'react-bootstrap';
 import Moment from 'react-moment';
 import SprayTimeDetails from '../spray-time-details/SprayTimeDetails';
-import { Transition } from 'react-transition-group';
 
 interface Props {
   sprayTimes: CanSprayTimeDto[];
@@ -24,8 +13,6 @@ interface Props {
 
 function SprayTimes(props: Props) {
   function handleClick(index: number) {
-    // e.preventDefault();
-    console.log(`Line Index: ${index}`);
     setSelectedLineIndex(index);
   }
 

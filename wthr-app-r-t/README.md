@@ -33,3 +33,11 @@ Build app for test with your local backend api server
 
 First need install 'npm install -g serve'
 Run your app in [http://localhost:5000] to test your build folder. Also test your folder in your local network.
+
+### `client API frissítése`
+
+openapi-generator-cli generate -g typescript-fetch -i http://localhost:21853/swagger/v1/swagger.json -o C:\temp\typescript-react-weather-client-restful-2
+
+### `favicon létrehozása`
+
+magick -density 512x512 -background none wthr_icon.png -resize 32x32 out.ico

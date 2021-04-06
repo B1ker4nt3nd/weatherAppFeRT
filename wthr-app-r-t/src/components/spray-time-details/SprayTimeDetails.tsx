@@ -1,22 +1,9 @@
 import './SprayTimeDetail.css';
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  MouseEventHandler,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
-import {
-  CanSprayDto,
-  CanSprayTimeDto,
-  CityDto,
-} from '../../services/typescript-react-weather-client/index';
-import { ListGroup, Popover, Spinner } from 'react-bootstrap';
-import Moment from 'react-moment';
+import { Popover } from 'react-bootstrap';
 import WeatherIcon from 'react-icons-weather';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 
 interface SprayTimeDetailsProps {
   temperatureMax: number | undefined;
@@ -29,12 +16,6 @@ interface SprayTimeDetailsProps {
 
 function SprayTimeDetails(props: SprayTimeDetailsProps) {
   const [fade, setFade] = useState(true);
-
-  const renderTooltip = (props: any) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Simple tooltip
-    </Tooltip>
-  );
 
   return (
     <div onAnimationEnd={() => setFade(false)} className={fade ? 'fade' : ''}>
@@ -57,7 +38,7 @@ function SprayTimeDetails(props: SprayTimeDetailsProps) {
               iconId={`${props.weatherIconId}`}
               flip="horizontal"
               rotate="90"
-              fixedWidth="false"
+              fixedWidth={false}
               className="wthr-icon"
             />
           </OverlayTrigger>

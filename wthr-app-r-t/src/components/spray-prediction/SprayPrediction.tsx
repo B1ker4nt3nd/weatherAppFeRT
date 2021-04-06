@@ -1,24 +1,18 @@
 import './SprayPrediction.css';
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  useEffect,
-  useState,
-} from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Form, Jumbotron, Spinner } from 'react-bootstrap';
 import * as apis from '../../services/typescript-react-weather-client/index';
 import {
   ApiCitiesGetRequest,
   ApiCitiesIdGetRequest,
-  CanSprayDto,
   CanSprayTimeDto,
   CityDto,
 } from '../../services/typescript-react-weather-client/index';
 import SprayTimes from '../spray-times/SprayTimes';
+import { Link } from 'react-router-dom';
 
 function SprayPrediction() {
   const [cities, setCities] = useState([] as CityDto[]);
-  const [cityId, setselectedCityId] = useState(0);
   const [sprayTimesLoading, setsprayTimesLoading] = useState(false);
   const [sprayTimes, setSprayTimes] = useState([] as CanSprayTimeDto[]);
 
@@ -41,7 +35,6 @@ function SprayPrediction() {
       'data-key'
     );
     setsprayTimesLoading(true);
-    console.log(cityId);
 
     new apis.CitiesApi()
       .apiCitiesIdGet({ id: _cityId } as ApiCitiesIdGetRequest)
@@ -60,6 +53,9 @@ function SprayPrediction() {
             permetezés előrejelző alkalmazás ami nem azt írja, hogy milyen idő
             lesz, hanem, hogy mikor lesz permetezésre alkalmas.
           </p>
+          {/* <Link to="about" className="btn btn-secondary">
+            Oldal részletek
+          </Link> */}
         </Jumbotron>
       </div>
       {isCitiesLoading(cities) ? (

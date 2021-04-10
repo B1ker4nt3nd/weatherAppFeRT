@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface InfoDto {
     /**
      * 
+     * @type {number}
+     * @memberof InfoDto
+     */
+    id?: number;
+    /**
+     * 
      * @type {string}
      * @memberof InfoDto
      */
@@ -43,6 +49,7 @@ export function InfoDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): I
     }
     return {
         
+        'id': !exists(json, 'id') ? undefined : json['id'],
         'version': !exists(json, 'version') ? undefined : json['version'],
         'lastLoadTime': !exists(json, 'lastLoadTime') ? undefined : (new Date(json['lastLoadTime'])),
     };
@@ -57,6 +64,7 @@ export function InfoDtoToJSON(value?: InfoDto | null): any {
     }
     return {
         
+        'id': value.id,
         'version': value.version,
         'lastLoadTime': value.lastLoadTime === undefined ? undefined : (value.lastLoadTime.toISOString()),
     };

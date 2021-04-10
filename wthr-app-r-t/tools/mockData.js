@@ -1057,6 +1057,15 @@ const cities = [
   },
 ];
 
+const information = [
+  {
+    id: 1,
+    version: '1.1',
+    lastLoadTime: '2021-04-10T06:57:20.7824327',
+  },
+];
+
 module.exports = {
   cities,
+  information,
 };

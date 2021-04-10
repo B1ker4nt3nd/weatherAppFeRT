@@ -64,6 +64,11 @@ server.get('/api/Cities*', (req, res, next) => {
   next();
 });
 
+server.get('/api/*', (req, res, next) => {
+  req.url = req.url.replace('/api', '');
+  next();
+});
+
 // Use default router
 server.use(router);
 

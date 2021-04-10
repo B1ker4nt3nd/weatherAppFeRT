@@ -79,7 +79,7 @@ function SprayTimes(props: Props) {
 }
 
 SprayTimes.prototypes = {
-  sprayTime: PropTypes.object.isRequired,
+  sprayTimes: PropTypes.object.isRequired,
   showSpinner: PropTypes.bool.isRequired,
 };
 

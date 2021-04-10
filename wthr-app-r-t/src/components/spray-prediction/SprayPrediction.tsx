@@ -50,7 +50,7 @@ function SprayPrediction() {
         <Jumbotron className="title-box">
           <h1>Permetezésre fel!</h1>
           <p>
-            permetezés előrejelző alkalmazás ami nem azt írja, hogy milyen idő
+            Permetezés előrejelző alkalmazás ami nem azt írja, hogy milyen idő
             lesz, hanem, hogy mikor lesz permetezésre alkalmas.
           </p>
           {/* <Link to="about" className="btn btn-secondary">

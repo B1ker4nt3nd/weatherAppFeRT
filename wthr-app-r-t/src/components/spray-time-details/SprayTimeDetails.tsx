@@ -58,7 +58,9 @@ function SprayTimeDetails(props: SprayTimeDetailsProps) {
             </div>
           </div>
           <div className="flex-container">
-            <span>{`Felhő százalékos aránya: ${props.cloudsPercentage}`}</span>
+            <span>
+              {`Felhő százalékos aránya: ${props.cloudsPercentage}`} %
+            </span>
           </div>
           <div className="flex-container">
             <span>{`Szél sebesség: ${props.windSpeed} km/h`}</span>
